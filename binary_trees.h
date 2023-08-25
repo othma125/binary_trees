@@ -29,4 +29,5 @@ int binary_tree_is_leaf(const binary_tree_t *);
 int binary_tree_is_root(const binary_tree_t *);
 void binary_tree_preorder(const binary_tree_t *, void (*func)(int));
 void binary_tree_inorder(const binary_tree_t *, void (*func)(int));
+void binary_tree_postorder(const binary_tree_t *, void (*func)(int));
 #endif
