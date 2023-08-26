@@ -23,7 +23,8 @@ size_t min_leaf_depth(const binary_tree_t *tree)
  * @level: integer
  * Return: an integer
  */
-int perfect_recursively(const binary_tree_t *node, size_t max_depth, size_t level)
+int perfect_recursively(const binary_tree_t *node,
+size_t max_depth, size_t level)
 {
 	if (!node->left && !node->right)
 		return (level == max_depth ? 1 : 0);
@@ -31,7 +32,7 @@ int perfect_recursively(const binary_tree_t *node, size_t max_depth, size_t leve
 		return (0);
 	return (perfect_recursively(node->left, max_depth, level + 1) &&
 		perfect_recursively(node->right, max_depth, level + 1));
-}	
+}
 /**
  * binary_tree_is_perfect - check code
  * @tree: binary_tree_t node

@@ -1,5 +1,5 @@
 #include "binary_trees.h"
-	
+
 /**
  * sibling - check code
  * @node: binary_tree_t node
@@ -12,7 +12,7 @@ binary_tree_t *sibling(binary_tree_t *node)
 	if (node->parent->left == node)
 		return (node->parent->right);
 	else if (node->parent->right == node)
-		return(node->parent->left);
+		return (node->parent->left);
 }
 /**
  * binary_tree_uncle - check code
