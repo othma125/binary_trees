@@ -1,7 +1,7 @@
 #include "binary_trees.h"
 
 /**
- * binary_tree_is_complete - check code
+ * binary_tree_rotate_right - check code
  * @tree: binary_tree_t node
  * Return: a binary_tree_t node
  */

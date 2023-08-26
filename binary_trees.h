@@ -43,4 +43,5 @@ binary_tree_t *binary_tree_uncle(binary_tree_t *);
 binary_tree_t *binary_trees_ancestor(const binary_tree_t *, const binary_tree_t *);
 int binary_tree_is_complete(const binary_tree_t *);
 binary_tree_t *binary_tree_rotate_right(binary_tree_t *);
+int binary_tree_is_bst(const binary_tree_t *);
 #endif
