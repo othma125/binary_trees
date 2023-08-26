@@ -72,7 +72,7 @@ bst_t *bst_delete(bst_t *root, bst_t *node)
  * @value: integer
  * Return: bst_t node
  */
-bst_t *remove_recursive(const bst_t *root, const bst_t *node, int value)
+bst_t *remove_recursive(bst_t *root, bst_t *node, int value)
 {
 	if (!node)
 		return (NULL);
