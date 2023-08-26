@@ -45,4 +45,5 @@ int binary_tree_is_complete(const binary_tree_t *);
 binary_tree_t *binary_tree_rotate_right(binary_tree_t *);
 int binary_tree_is_bst(const binary_tree_t *);
 bst_t *array_to_bst(int *, size_t);
+bst_t *bst_remove(bst_t *, int);
 #endif

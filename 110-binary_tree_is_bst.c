@@ -3,7 +3,7 @@
 #include "binary_trees.h"
 
 /**
- * binary_tree_is_bst - check code
+ * is_bst_recursion - check code
  * @node: binary_tree_t node
  * @min: integer
  * @max: integer
