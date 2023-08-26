@@ -31,7 +31,12 @@ bst_t *array_to_bst_recursion(int *array, int start, int end, bst_t *parent)
  */
 bst_t *array_to_bst(int *array, size_t size)
 {
+	size_t i = 0;
+	bst_t *tree = NULL;
+
 	if (!array || size == 0)
 		return (NULL);
-	return (array_to_bst_recursion(array, 0, size - 1, NULL));
+	for (i = 0; i < size; i++)
+		bst_insert(&tree, array[i]);
+	return (tree);
 }
