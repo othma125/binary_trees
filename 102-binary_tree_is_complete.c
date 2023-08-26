@@ -1,21 +1,21 @@
 #include "binary_trees.h"
 /**
- * countNodes - check code
+ * nodes_counter - check code
  * @tree: binary_tree_t node
  * Return: an integer
  */
-size_t countNodes(const binary_tree_t* root)
+size_t nodes_counter(const binary_tree_t *tree)
 {
-    if (root == NULL)
-        return (0);
-    return (1 + countNodes(root->left) +
-            countNodes(root->right));
+	if (!tree)
+		return (0);
+	return (1 + nodes_counter(tree->left) +
+		nodes_counter(tree->right));
 }
 /**
- * binary_tree_is_perfect - check code
+ * complete_recursively - check code
  * @node: binary_tree_t node
- * @max_depth: integer
- * @level: integer
+ * @index: integer
+ * @nodes_count: integer
  * Return: an integer
  */
 int complete_recursively(const binary_tree_t *node,
@@ -37,5 +37,5 @@ int binary_tree_is_complete(const binary_tree_t *tree)
 {
 	if (!tree)
 		return (1);
-	return (complete_recursively(tree, 0, countNodes(tree)));
+	return (complete_recursively(tree, 0, nodes_counter(tree)));
 }
