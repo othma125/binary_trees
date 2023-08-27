@@ -6,29 +6,32 @@
  * @node: bst_t node
  * Return: bst_t node
  */
-bst_t *bst_delete(bst_t *root, bst_t *node)
+bst_t *bst_delete(bst_t **root, bst_t *node)
 {
 	bst_t *temp;
 
 	if (!node->left && !node->right)
 	{
-		if (node == root)
+		if (node == *root)
+		{
+			free(node);
 			return (NULL);
+		}
 		if (node->parent->left == node)
 			node->parent->left = NULL;
 		else
 			node->parent->right = NULL;
 		free(node);
-		return (root);
+		return (*root);
 	}
 	if (!node->left)
 	{
-		if (node == root)
+		if (node == *root)
 		{
-			root = node->right;
-			root->parent = NULL;
+			root = &node->right;
+			(*root)->parent = NULL;
 			free(node);
-			return (root);
+			return (*root);
 		}
 		if (node->parent->left == node)
 			node->parent->left = node->right;
@@ -36,16 +39,16 @@ bst_t *bst_delete(bst_t *root, bst_t *node)
 			node->parent->right = node->right;
 		node->right->parent = node->parent;
 		free(node);
-		return (root);
+		return (*root);
 	}
 	if (!node->right)
 	{
-		if (node == root)
+		if (node == *root)
 		{
-			root = node->left;
-			root->parent = NULL;
+			root = &node->left;
+			(*root)->parent = NULL;
 			free(node);
-			return (root);
+			return (*root);
 		}
 		if (node->parent->left == node)
 			node->parent->left = node->left;
@@ -53,17 +56,13 @@ bst_t *bst_delete(bst_t *root, bst_t *node)
 			node->parent->right = node->left;
 		node->left->parent = node->parent;
 		free(node);
-		return (root);
+		return (*root);
 	}
 	temp = node->right;
 	while (temp->left)
 		temp = temp->left;
 	node->n = temp->n;
-	if (temp->parent->left == temp)
-		temp->parent->left = bst_delete(root, temp);
-	else
-		temp->parent->right = bst_delete(root, temp);
-	return (root);
+	return (bst_delete(root, temp));
 }
 /**
  * remove_recursive - check code
@@ -72,7 +71,7 @@ bst_t *bst_delete(bst_t *root, bst_t *node)
  * @value: integer
  * Return: bst_t node
  */
-bst_t *remove_recursive(bst_t *root, bst_t *node, int value)
+bst_t *remove_recursive(bst_t **root, bst_t *node, int value)
 {
 	if (!node)
 		return (NULL);
@@ -90,5 +89,5 @@ bst_t *remove_recursive(bst_t *root, bst_t *node, int value)
  */
 bst_t *bst_remove(bst_t *root, int value)
 {
-	return (remove_recursive(root, root, value));
+	return (remove_recursive(&root, root, value));
 }
