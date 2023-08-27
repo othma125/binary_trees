@@ -1,5 +1,3 @@
 *main.c
 *.out
 binary_tree_print.c
-122-array_to_avl.c
-132-array_to_heap.c
