@@ -17,7 +17,10 @@ heap_t *heap_insert(heap_t **root, int value)
 	if (!root)
 		return (NULL);
 	if (!(*root))
-		return (*root = binary_tree_node(NULL, value));
+	{
+		*root = binary_tree_node(NULL, value);
+		return (*root);
+	}
 	current = *root, t_size = binary_tree_size(current), num_leaves = t_size;
 	tree_lvl = 0, sub_size = 1;
 	while (num_leaves >= sub_size)
@@ -31,13 +34,11 @@ heap_t *heap_insert(heap_t **root, int value)
 			current = current->left;
 		bit_mask >>= 1;
 	}
-
 	new_node = binary_tree_node(current, value);
 	if (num_leaves & 1)
 		current->right = new_node;
 	else
 		current->left = new_node;
-
 	flip_node = new_node;
 	while (flip_node->parent && (flip_node->n > flip_node->parent->n))
 	{
@@ -46,8 +47,7 @@ heap_t *heap_insert(heap_t **root, int value)
 		flip_node->parent->n = tmp;
 		flip_node = flip_node->parent;
 	}
-
-	return (new_node);
+	return (flip_node);
 }
 
 /**
