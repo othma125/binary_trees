@@ -7,8 +7,6 @@
  */
 size_t min_leaf_depth(const binary_tree_t *tree)
 {
-	size_t left = 0, right = 0;
-
 	if (!tree || (!tree->left && !tree->right))
 		return (0);
 	if (tree->left)
