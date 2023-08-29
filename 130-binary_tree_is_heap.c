@@ -88,11 +88,9 @@ int btic_helper(const binary_tree_t *tree, size_t index, size_t size)
  * @tree: Pointer to the root node of the tree under evaluation.
  *
  * Description:
- * A complete binary tree is a binary tree in which every
- * level, except possibly the last,
- * is completely filled, and all nodes are as far left as
- * possible. This function evaluates
- * the tree to ascertain if it adheres to the properties
+ * A complete binary tree is a binary tree in which every level,except possibly
+ * the last,is completely filled, and all nodes are as far left as possible.
+ * This function evaluates the tree to ascertain if it adheres the properties
  * of a complete binary tree.
  *
  * Return:
