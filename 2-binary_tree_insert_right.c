@@ -8,9 +8,12 @@
  */
 binary_tree_t *binary_tree_insert_right(binary_tree_t *p, int n)
 {
-	binary_tree_t *new = binary_tree_node(p, n);
+	binary_tree_t *new;
 
-	if (!new || !p)
+	if (!p)
+		return (NULL);
+	new = binary_tree_node(p, n);
+	if (!new)
 		return (NULL);
 	if (p->right)
 	{
