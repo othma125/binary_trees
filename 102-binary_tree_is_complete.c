@@ -36,6 +36,6 @@ size_t index, size_t nodes_count)
 int binary_tree_is_complete(const binary_tree_t *tree)
 {
 	if (!tree)
-		return (1);
+		return (0);
 	return (complete_recursively(tree, 0, nodes_counter(tree)));
 }
