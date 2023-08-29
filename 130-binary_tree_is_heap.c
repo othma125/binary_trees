@@ -1,27 +1,5 @@
 #include "binary_trees.h"
 
-/**
- * binary_tree_is_heap - Determines if a given
- * binary tree is a Max Binary Heap.
- * @tree: Pointer to the root node of the tree
- *  under evaluation.
- *
- * Description:
- * A Max Binary Heap is a specialized tree-based
- *  data structure that satisfies
- * the heap property. For a particular node I,
- * the values of its children are
- * always less than or equal to the value of I.
- *
- * Return:
- * - 1 if the tree is a valid Max Binary Heap.
- * - 0 if the tree is NULL or does not satisfy the Max Binary Heap property.
- */
-
-int binary_tree_is_heap(const binary_tree_t *tree)
-{
-	return (tree ? btih_helper(tree) : 0);
-}
 
 /**
  * btih_helper - Recursively checks if a binary tree
@@ -65,27 +43,6 @@ int btih_helper(const binary_tree_t *tree)
 	return (is_current_node_valid && is_left_valid && is_right_valid);
 }
 
-/**
- * binary_tree_is_complete - Determines if a given binary tree is complete.
- * @tree: Pointer to the root node of the tree under evaluation.
- *
- * Description:
- * A complete binary tree is a binary tree in which every
- * level, except possibly the last,
- * is completely filled, and all nodes are as far left as
- * possible. This function evaluates
- * the tree to ascertain if it adheres to the properties
- * of a complete binary tree.
- *
- * Return:
- * - 1 if the tree is complete.
- * - 0 if the tree is not complete or if the tree is NULL.
- */
-
-int binary_tree_is_complete(const binary_tree_t *tree)
-{
-	return (tree ? btic_helper(tree, 0, binary_tree_size(tree)) : 0);
-}
 
 /**
  * btic_helper - Recursively evaluates if a given
@@ -128,6 +85,27 @@ int btic_helper(const binary_tree_t *tree, size_t index, size_t size)
 
 	return (is_left_complete && is_right_complete);
 }
+/**
+ * binary_tree_is_complete - Determines if a given binary tree is complete.
+ * @tree: Pointer to the root node of the tree under evaluation.
+ *
+ * Description:
+ * A complete binary tree is a binary tree in which every
+ * level, except possibly the last,
+ * is completely filled, and all nodes are as far left as
+ * possible. This function evaluates
+ * the tree to ascertain if it adheres to the properties
+ * of a complete binary tree.
+ *
+ * Return:
+ * - 1 if the tree is complete.
+ * - 0 if the tree is not complete or if the tree is NULL.
+ */
+
+int binary_tree_is_complete(const binary_tree_t *tree)
+{
+	return (tree ? btic_helper(tree, 0, binary_tree_size(tree)) : 0);
+}
 
 /**
  * binary_tree_size - Computes the total number of nodes in a binary tree.
@@ -156,4 +134,26 @@ size_t binary_tree_size(const binary_tree_t *tree)
 	right_size = binary_tree_size(tree->right);
 
 	return (left_size + right_size + 1);
+}
+/**
+ * binary_tree_is_heap - Determines if a given
+ * binary tree is a Max Binary Heap.
+ * @tree: Pointer to the root node of the tree
+ *  under evaluation.
+ *
+ * Description:
+ * A Max Binary Heap is a specialized tree-based
+ *  data structure that satisfies
+ * the heap property. For a particular node I,
+ * the values of its children are
+ * always less than or equal to the value of I.
+ *
+ * Return:
+ * - 1 if the tree is a valid Max Binary Heap.
+ * - 0 if the tree is NULL or does not satisfy the Max Binary Heap property.
+ */
+
+int binary_tree_is_heap(const binary_tree_t *tree)
+{
+	return (tree ? btih_helper(tree) : 0);
 }
