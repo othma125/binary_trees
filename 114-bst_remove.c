@@ -13,41 +13,28 @@ bst_t *bst_delete(bst_t **root, bst_t *node)
 	if (!node->left && !node->right)
 	{
 		if (node == *root)
-		{
-			free(node);
-			return (NULL);
-		}
+			return (free(node), NULL);
 		if (node->parent->left == node)
 			node->parent->left = NULL;
 		else
 			node->parent->right = NULL;
-		free(node);
-		return (*root);
+		return (free(node), *root);
 	}
 	if (!node->left)
 	{
 		if (node == *root)
-		{
-			root = &node->right;
-			(*root)->parent = NULL;
-			free(node);
-			return (*root);
-		}
+			return (root = &node->right, (*root)->parent = NULL, free(node), *root);
 		if (node->parent->left == node)
 			node->parent->left = node->right;
 		else
 			node->parent->right = node->right;
-		node->right->parent = node->parent;
-		free(node);
-		return (*root);
+		return (node->right->parent = node->parent, free(node), *root);
 	}
 	if (!node->right)
 	{
 		if (node == *root)
 		{
-			root = &node->left;
-			(*root)->parent = NULL;
-			free(node);
+			root = &node->left, (*root)->parent = NULL, free(node);
 			return (*root);
 		}
 		if (node->parent->left == node)
@@ -55,15 +42,14 @@ bst_t *bst_delete(bst_t **root, bst_t *node)
 		else
 			node->parent->right = node->left;
 		node->left->parent = node->parent;
-		free(node);
-		return (*root);
+		return (free(node), *root);
 	}
 	temp = node->right;
 	while (temp->left)
 		temp = temp->left;
-	node->n = temp->n;
-	return (bst_delete(root, temp));
+	return (node->n = temp->n, bst_delete(root, temp));
 }
+
 /**
  * remove_recursive - check code
  * @root: bst_t node
