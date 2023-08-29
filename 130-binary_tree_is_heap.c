@@ -1,6 +1,5 @@
 #include "binary_trees.h"
 
-
 /**
  * btih_helper - Recursively checks if a binary tree
  * is a valid Max Binary Heap.
@@ -42,7 +41,6 @@ int btih_helper(const binary_tree_t *tree)
 
 	return (is_current_node_valid && is_left_valid && is_right_valid);
 }
-
 
 /**
  * btic_helper - Recursively evaluates if a given
@@ -143,8 +141,7 @@ size_t binary_tree_size(const binary_tree_t *tree)
  *
  * Description:
  * A Max Binary Heap is a specialized tree-based
- *  data structure that satisfies
- * the heap property. For a particular node I,
+ * data structure that satisfies the heap property. For a particular node I,
  * the values of its children are
  * always less than or equal to the value of I.
  *
