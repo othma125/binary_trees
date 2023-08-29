@@ -1,7 +1,7 @@
 #include "binary_trees.h"
 
 /**
- * binary_tree_is_avl - check code
+ * array_to_avl - check code
  * @array: integer array
  * @size: integer
  * Return: integer
