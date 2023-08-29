@@ -136,8 +136,7 @@ size_t binary_tree_size(const binary_tree_t *tree)
 /**
  * binary_tree_is_heap - Determines if a given
  * binary tree is a Max Binary Heap.
- * @tree: Pointer to the root node of the tree
- *  under evaluation.
+ * @tree: Pointer to the root node of the tree under evaluation.
  *
  * Description:
  * A Max Binary Heap is a specialized tree-based
