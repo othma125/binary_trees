@@ -1,16 +1,15 @@
 #include "binary_trees.h"
 
-
 /**
  * binary_tree_depth - check code
+ *
  * @tree: binary_tree_t node
+ *
  * Return: integer
  */
 size_t binary_tree_depth(const binary_tree_t *tree)
 {
-	if (!tree)
-		return (0);
-	return (1 + binary_tree_depth(tree->parent));
+	return (tree ? 1 + binary_tree_depth(tree->parent) : 0);
 }
 /**
  * binary_tree_ancestor - check code
@@ -18,8 +17,7 @@ size_t binary_tree_depth(const binary_tree_t *tree)
  * @node2: binary_tree_t node
  * Return: binary_tree_t node
  */
-binary_tree_t *binary_trees_ancestor(const binary_tree_t *node1
-, const binary_tree_t *node2)
+binary_tree_t *binary_trees_ancestor(const binary_tree_t *node1, const binary_tree_t *node2)
 {
 	size_t depth1, depth2;
 
