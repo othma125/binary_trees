@@ -2,17 +2,20 @@
 
 /**
  * binary_tree_leaves - check code
+ *
  * @tree: binary_tree_t node
+ *
  * Return: an integer
  */
 size_t binary_tree_leaves(const binary_tree_t *tree)
 {
-	int leaves = 0;
+	int leaves;
 
 	if (!tree)
-		return (leaves);
+		return (0);
 	if (!tree->left && !tree->right)
 		return (1);
+	leaves = 0;
 	if (tree->left)
 		leaves += binary_tree_leaves(tree->left);
 	if (tree->right)
