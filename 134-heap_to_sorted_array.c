@@ -32,10 +32,15 @@ int *heap_to_sorted_array(heap_t *heap, size_t *size)
 }
 
 /**
- * tree_size - computes the combined heights of a binary tree
- * @tree: pointer to the main node of the tree to compute the height
+ * tree_size - Calculates the total number of nodes in a binary tree.
+ *             This function essentially computes the size of the tree.
+ * @tree: Pointer to the root node of the tree to measure.
  *
- * Return: Height or 0 if tree is NULL
+ * Description: The function recursively traverses both left and right
+ *              subtrees, counting nodes along the way. The total count
+ *              represents the size of the tree.
+ *
+ * Return: Total number of nodes in the tree, or 0 if tree is NULL.
  */
 size_t tree_size(const binary_tree_t *tree)
 {
