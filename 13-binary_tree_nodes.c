@@ -2,15 +2,18 @@
 
 /**
  * binary_tree_nodes - check code
+ *
  * @tree: binary_tree_t node
+ *
  * Return: an integer
  */
 size_t binary_tree_nodes(const binary_tree_t *tree)
 {
-	size_t nodes = 0;
+	size_t nodes;
 
 	if (!tree)
-		return (nodes);
+		return (0);
+	nodes = 0;
 	if (tree->left || tree->right)
 		nodes += 1;
 	if (tree->left)
