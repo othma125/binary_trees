@@ -1,26 +1,6 @@
 #include "binary_trees.h"
 
-/**
- * tree_size - computes the combined heights of a binary tree
- * @tree: pointer to the main node of the tree to compute the height
- *
- * Return: Height or 0 if tree is NULL
- */
-size_t tree_size(const binary_tree_t *tree)
-{
-	size_t left_height = 0, right_height = 0;
-
-	if (!tree)
-		return (0);
-
-	if (tree->left)
-		left_height = tree_size(tree->left) + 1;
-
-	if (tree->right)
-		right_height = tree_size(tree->right) + 1;
-
-	return (left_height + right_height);
-}
+size_t tree_size(const binary_tree_t *tree);
 
 /**
  * heap_to_sorted_array - transforms a Binary Max Heap
@@ -49,4 +29,26 @@ int *heap_to_sorted_array(heap_t *heap, size_t *size)
 		arr[index] = heap_extract(&heap), index++;
 
 	return (arr);
+}
+
+/**
+ * tree_size - computes the combined heights of a binary tree
+ * @tree: pointer to the main node of the tree to compute the height
+ *
+ * Return: Height or 0 if tree is NULL
+ */
+size_t tree_size(const binary_tree_t *tree)
+{
+	size_t left_height = 0, right_height = 0;
+
+	if (!tree)
+		return (0);
+
+	if (tree->left)
+		left_height = tree_size(tree->left) + 1;
+
+	if (tree->right)
+		right_height = tree_size(tree->right) + 1;
+
+	return (left_height + right_height);
 }
