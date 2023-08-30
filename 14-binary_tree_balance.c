@@ -22,7 +22,9 @@ size_t binary_tree_height(const binary_tree_t *node)
 }
 /**
  * binary_tree_balance - check code
+ *
  * @tree: binary_tree_t node
+ *
  * Return: an integer
  */
 int binary_tree_balance(const binary_tree_t *tree)
