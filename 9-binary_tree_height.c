@@ -2,13 +2,14 @@
 
 /**
  * binary_tree_height - check code
+ *
  * @node: binary_tree_t node
+ *
  * Return: an integer
  */
 size_t binary_tree_height(const binary_tree_t *node)
 {
-	size_t left_height = 0;
-	size_t right_height = 0;
+	size_t left_height = 0, right_height = 0;
 
 	if (node == NULL)
 		return (0);
