@@ -39,7 +39,7 @@ int *heap_to_sorted_array(heap_t *heap, size_t *size)
  */
 size_t tree_size(const binary_tree_t *tree)
 {
-	size_t l_height = 0, right_height = 0;
+	size_t l_height = 0, r_height = 0;
 
 	if (!tree)
 		return (0);
@@ -48,7 +48,7 @@ size_t tree_size(const binary_tree_t *tree)
 		l_height = tree_size(tree->left) + 1;
 
 	if (tree->right)
-		right_height = tree_size(tree->right) + 1;
+		r_height = tree_size(tree->right) + 1;
 
-	return (l_height + right_height);
+	return (l_height + r_height);
 }
