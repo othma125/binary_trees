@@ -12,9 +12,7 @@ binary_tree_t *binary_tree_node(binary_tree_t *p, int n)
 
 	if (new == NULL)
 		return (NULL);
-	new->n = n;
-	new->parent = p;
-	new->left = NULL;
-	new->right = NULL;
+	new->n = n, new->parent = p;
+	new->left = NULL, new->right = NULL;
 	return (new);
 }
