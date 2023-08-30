@@ -2,7 +2,9 @@
 
 /**
  * sibling - check code
+ *
  * @node: binary_tree_t node
+ *
  * Return: binary_tree_t node
  */
 binary_tree_t *sibling(binary_tree_t *node)
@@ -15,7 +17,9 @@ binary_tree_t *sibling(binary_tree_t *node)
 }
 /**
  * binary_tree_uncle - check code
+ *
  * @node: binary_tree_t node
+ *
  * Return: binary_tree_t node
  */
 binary_tree_t *binary_tree_uncle(binary_tree_t *node)
