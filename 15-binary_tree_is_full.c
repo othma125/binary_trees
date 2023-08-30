@@ -2,7 +2,9 @@
 
 /**
  * binary_tree_is_full - check code
+ *
  * @tree: binary_tree_t node
+ *
  * Return: an integer
  */
 int binary_tree_is_full(const binary_tree_t *tree)
