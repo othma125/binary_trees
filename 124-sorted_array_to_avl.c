@@ -1,5 +1,6 @@
 #include "binary_trees.h"
 
+void sata_helper(avl_t **root, int *array, size_t lo, size_t hi);
 /**
  * array_to_tree - constructs an AVL tree from a sorted list
  * @array: a pointer to the starting element of the array to transform
@@ -18,8 +19,8 @@ avl_t *sorted_array_to_avl(int *array, size_t size)
 	mid_point = (size - 1) / 2;
 	root_node = binary_tree_node(NULL, array[mid_point]);
 
-	tree_assist(&root_node, array, -1, mid_point);
-	tree_assist(&root_node, array, mid_point, size);
+	sata_helper(&root_node, array, -1, mid_point);
+	sata_helper(&root_node, array, mid_point, size);
 
 	return (root_node);
 }
