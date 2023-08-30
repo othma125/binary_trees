@@ -2,8 +2,10 @@
 
 /**
  * binary_tree_postorder - check code
+ *
  * @tree: binary_tree_t
  * @func: function pointer
+ *
  * Return: nothing
  */
 void binary_tree_postorder(const binary_tree_t *tree, void (*func)(int))
