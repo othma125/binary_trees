@@ -1,7 +1,7 @@
 #include "binary_trees.h"
 
 /**
- * calculate_tree_height - computes the combined heights of a binary tree
+ * tree_size - computes the combined heights of a binary tree
  * @tree: pointer to the main node of the tree to compute the height
  *
  * Return: Height or 0 if tree is NULL
@@ -23,7 +23,7 @@ size_t tree_size(const binary_tree_t *tree)
 }
 
 /**
- * max_heap_to_array - transforms a Binary Max Heap
+ * heap_to_sorted_array - transforms a Binary Max Heap
  * into an ordered array of integers
  * @heap: a pointer to the main node of the heap to transform
  * @size: a pointer to save the length of the array
