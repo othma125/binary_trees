@@ -9,12 +9,14 @@ size_t tree_size(const binary_tree_t *tree);
  * @size: Address where the size of the resulting array will be stored.
  *
  * Description: This function extracts the maximum value from the heap
- *              repeatedly, which results in a sorted array in descending order.
- *              The size of the array is determined by the total number of nodes
- *              in the heap, which is computed using the tree_size function.
+ *repeatedly, which results in a sorted array
+ *in descending order.
+ *The size of the array is determined by the total
+ *number of nodes
+ *in the heap, which is computed using the tree_size function.
  *
  * Return: Pointer to the dynamically allocated sorted array.
- *         NULL if the heap is empty or there's a memory allocation failure.
+ * NULL if the heap is empty or there's a memory allocation failure.
  */
 int *heap_to_sorted_array(heap_t *heap, size_t *size)
 {
