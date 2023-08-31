@@ -12,12 +12,13 @@ size_t binary_tree_depth(const binary_tree_t *tree)
 	return (tree ? 1 + binary_tree_depth(tree->parent) : 0);
 }
 /**
- * binary_tree_ancestor - check code
+ * binary_trees_ancestor - check code
  * @node1: binary_tree_t node
  * @node2: binary_tree_t node
  * Return: binary_tree_t node
  */
-binary_tree_t *binary_trees_ancestor(const binary_tree_t *node1, const binary_tree_t *node2)
+binary_tree_t *binary_trees_ancestor(const binary_tree_t *node1
+, const binary_tree_t *node2)
 {
 	size_t depth1, depth2;
 
